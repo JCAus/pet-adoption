@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Pet Profile{% endblock %}
+{% block content %}
+
+<h1 class="display-1">{{pet.name}}</h1>
+<div class="container">
+<img src="{{pet.photo_url}}" class="pet_picture img-fluid rounded" alt="Responsive image">
+<p>Hi! My name is {{pet.name}}. {% if pet.available %}I'm up for adoption! {% else %}I've finally found a home! {% endif %}</p>
+
+<p>Age: {% if pet.age %}{{pet.age}}{% else %}N/A{% endif %}</p>
+<p>{% if pet.notes %}{{pet.notes}}{% else %}{% endif %}</p>
+<a href="/pets/{{pet.id}}/edit" class="btn btn-primary justify-content-center">Edit pet</a>
+</div>
+{% endblock %}
